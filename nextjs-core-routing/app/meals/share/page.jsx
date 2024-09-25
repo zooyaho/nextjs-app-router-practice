@@ -1,4 +1,5 @@
 import ImagePicker from "@/components/meals/image-picker";
+import { shareMeal } from "@/lib/action";
 
 export default function ShareMealPage() {
   return (
@@ -13,7 +14,7 @@ export default function ShareMealPage() {
         <p>Or any other meal you feel needs sharing!</p>
       </header>
       <main className="w-[90%] max-w-[75rem] mx-auto my-12 text-white">
-        <form className="max-w-[50rem] flex flex-col gap-4">
+        <form className="max-w-[50rem] flex flex-col gap-4" action={shareMeal}>
           <div className="flex flex-col gap-4">
             <p className="w-full">
               <label
@@ -91,7 +92,7 @@ export default function ShareMealPage() {
               className="block w-full p-2 rounded-md border border-[#454952] bg-[#1c2027] text-lg font-montserrat text-[#ddd6cb] focus:outline-none focus:ring-2 focus:ring-[#f99f2a] focus:bg-[#1f252d]"
             ></textarea>
           </p>
-          <ImagePicker />
+          <ImagePicker label={"your image"} name={"image"} />
           <p className="text-right">
             <button
               type="submit"

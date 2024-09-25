@@ -7,3 +7,7 @@ export async function getMeals() {
   // throw new Error("식사 불러오기를 실패 했습니다.");
   return db.prepare("SELECT * FROM meals").all();
 }
+
+export function getMeal(slug) {
+  return db.prepare("SELECT * FROM meals WHERE slug = ?").get(slug);
+}

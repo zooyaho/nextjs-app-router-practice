@@ -1,4 +1,6 @@
+"use client";
 import ImagePicker from "@/components/meals/image-picker";
+import MealsFormSubmit from "@/components/meals/meals-form-submit";
 import { shareMeal } from "@/lib/action";
 
 export default function ShareMealPage() {
@@ -94,12 +96,7 @@ export default function ShareMealPage() {
           </p>
           <ImagePicker label={"your image"} name={"image"} />
           <p className="text-right">
-            <button
-              type="submit"
-              className="py-3 px-8 rounded-md bg-gradient-to-r from-[#f9572a] to-[#ff9b05] text-white font-bold text-lg shadow-md hover:bg-gradient-to-r hover:from-[#fd4715] hover:to-[#f9b241] focus:ring-2 focus:ring-offset-2 focus:ring-[#f99f2a] disabled:bg-[#ccc] disabled:text-[#979797] disabled:cursor-not-allowed"
-            >
-              Share Meal
-            </button>
+            <MealsFormSubmit />
           </p>
         </form>
       </main>

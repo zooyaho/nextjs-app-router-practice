@@ -1,3 +1,5 @@
+import ImagePicker from "@/components/meals/image-picker";
+
 export default function ShareMealPage() {
   return (
     <>
@@ -89,7 +91,7 @@ export default function ShareMealPage() {
               className="block w-full p-2 rounded-md border border-[#454952] bg-[#1c2027] text-lg font-montserrat text-[#ddd6cb] focus:outline-none focus:ring-2 focus:ring-[#f99f2a] focus:bg-[#1f252d]"
             ></textarea>
           </p>
-          IMAGE PICKER
+          <ImagePicker />
           <p className="text-right">
             <button
               type="submit"

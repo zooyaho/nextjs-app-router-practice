@@ -1,11 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
 }
 
 body {
@@ -18,50 +22,6 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-#page {
-  width: 90%;
-  max-width: 60rem;
-  margin: 2rem auto;
-}
-
-#main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-#logo {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.5rem;
-  border-radius: 4px;
-}
-
-#main-header #logo a,
-#main-header #logo a:hover {
-  color: #e1e1d7;
-  text-decoration: none;
-}
-
-#main-header ul {
-  display: flex;
-  gap: 2rem;
-  font-weight: bold;
-}
-
-#main-header ul a {
-  text-decoration: none;
-  color: #e5e5e1;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-}
-
-#main-header ul a:hover,
-#main-header ul a.active {
-  background-color: #bcbcb7;
-  color: #181817;
 }
 
 #home {
@@ -102,35 +62,6 @@ ul {
   background-color: #e5e5e1;
 }
 
-.news-list {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-}
-
-.news-list a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  color: #e5e5e1;
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 1.2rem;
-  padding: 0 0 1rem 0;
-}
-
-.news-list a img {
-  width: 100%;
-  height: 14rem;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.news-list a:hover {
-  background-color: #2d2d2b;
-}
-
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -141,12 +72,6 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.news-article img {
-  width: 7rem;
-  margin-bottom: 1rem;
-  border-radius: 4px;
 }
 
 .modal {

@@ -2,8 +2,10 @@
 import ImagePicker from "@/components/meals/image-picker";
 import MealsFormSubmit from "@/components/meals/meals-form-submit";
 import { shareMeal } from "@/lib/action";
+import { useFormState } from "react-dom";
 
 export default function ShareMealPage() {
+  const [formState, formAction] = useFormState(shareMeal, { message: null });
   return (
     <>
       <header className="flex flex-col gap-12 my-12 mx-auto w-[90%] max-w-[75rem] text-[#ddd6cb] text-xl">
@@ -16,7 +18,7 @@ export default function ShareMealPage() {
         <p>Or any other meal you feel needs sharing!</p>
       </header>
       <main className="w-[90%] max-w-[75rem] mx-auto my-12 text-white">
-        <form className="max-w-[50rem] flex flex-col gap-4" action={shareMeal}>
+        <form className="max-w-[50rem] flex flex-col gap-4" action={formAction}>
           <div className="flex flex-col gap-4">
             <p className="w-full">
               <label
@@ -95,6 +97,7 @@ export default function ShareMealPage() {
             ></textarea>
           </p>
           <ImagePicker label={"your image"} name={"image"} />
+          {formState.message && <p>{formState.message}</p>}
           <p className="text-right">
             <MealsFormSubmit />
           </p>

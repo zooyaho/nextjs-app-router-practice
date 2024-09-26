@@ -3,6 +3,7 @@
 
 import { redirect } from "next/navigation";
 import { saveMeal } from "./meals";
+import { revalidatePath } from "next/cache";
 
 const isInvalidText = (text) => {
   return !text || text.trim() === "";
@@ -34,5 +35,6 @@ export const shareMeal = async (_prevState, formData) => {
     return { message: "Invalid input." }; // response객체를 반환할 수 있음.
   }
   await saveMeal(meal);
+  revalidatePath("/meals");
   redirect("/meals");
 };

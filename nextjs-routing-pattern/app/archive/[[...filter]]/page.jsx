@@ -24,7 +24,7 @@ export default function FilteredNewsPage({ params }) {
     links = [];
   }
 
-  let newsContent = "선택된 기간에 대한 뉴스를 찾지 못했습니다.";
+  let newsContent = "기간설정을 하세요.";
 
   if (news && news.length > 0) {
     newsContent = <NewsList news={news} />;

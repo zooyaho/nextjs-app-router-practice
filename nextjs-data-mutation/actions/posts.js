@@ -1,5 +1,6 @@
 "use server";
-import { storePost } from "@/lib/posts";
+import { storePost, updatePostLikeStatus } from "@/lib/posts";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export async function createPost(prevFormData, formData) {
@@ -25,5 +26,12 @@ export async function createPost(prevFormData, formData) {
     userId: 1,
   });
 
+  revalidatePath("/", "layout");
   redirect("/feed");
+}
+
+export async function togglePostLikeStatus(postId) {
+  // db를 직접 수정하는 작업의 함수 호출 시 server action을 정의 해야 함!
+  await updatePostLikeStatus(postId, 2);
+  revalidatePath("/peed", "layout");
 }

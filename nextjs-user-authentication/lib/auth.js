@@ -74,3 +74,21 @@ export async function varifyAuth() {
   }
   return result;
 }
+
+export async function destroySession() {
+  const { session } = await varifyAuth();
+
+  if (!session) {
+    return { error: "인증되지 않음" };
+  }
+
+  // 세션 무효화, 쿠키 삭제
+  await lucia.invalidateSession(session.id);
+
+  const sessionCookie = lucia.createBlankSessionCookie();
+  cookies().set(
+    sessionCookie.name,
+    sessionCookie.value, // 세션 ID
+    sessionCookie.attributes
+  );
+}
